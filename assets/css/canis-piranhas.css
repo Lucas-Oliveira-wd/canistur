@@ -1,0 +1,221 @@
+/*====================================================================================================
+=====                                                                                          =======
+=====               Este site foi feito por "Lucas Oliveira"                                   =======
+=====               Telefone (Whatsapp): (82) 98878-5978                                       =======
+=====               Instagram: @lucasoliveirawd                                                =======
+=====               E-mail: lukasforever02@gmail.com                                           =======
+=====                                                                                          =======
+=====================================================================================================*/
+
+#piranhas-historia{
+    position: relative;
+    background: transparent;
+}
+
+#piranhas-historia .container{
+    background: transparent;
+}
+
+#piranhas-historia .container p{
+    color: #333;
+    padding: 2rem 0;
+    text-indent: 0;
+}
+
+.map-wrapper{
+    float: right;
+    height: 100%;
+}
+
+.tur-explain{
+    width: 100%;
+    margin: 2rem 0 0 0;
+}
+
+.tur-explain-top{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.caract-piranhas{
+    display: block;
+    margin: 1rem 0 0 0;
+}
+
+.caract-piranhas li{
+    display: block;
+}
+
+.caract-piranhas .img-wrapper{
+    max-width: 1rem;
+    max-height: 1rem;
+    display: inline-block;
+    transform: translateY(2px);
+}
+
+.caract-piranhas p{
+    display: inline-block;
+    padding: .5rem .5rem;
+    text-indent: 0;
+    color: #555;
+    font: normal normal 400 1.2rem/2rem var(--font-secundary);
+}
+
+.flag-pir-wrapper{
+    float: right;
+    margin-top: 2rem;
+}
+
+.tur-frase{
+    width: 100%;
+    display: block;
+}
+
+.tur-frase p{
+    text-indent: 0;
+    margin: 2rem 0;
+    font: normal normal 600 1.5rem/2.5rem var(--font-secundary);
+    color: #555;
+}
+
+.pir-hist{
+    display: block;
+    width: 100%;
+}
+
+.pir-hist-button{
+    width: 100%;
+    display: block;
+    border-bottom: 3px solid var(--color-primary);
+    padding: 0 0 1rem 0;
+}
+
+.pir-hist-button button{
+    padding: .5rem .9rem;
+    border-radius: 3rem;
+    border: none;
+    background: var(--color-primary);
+    color: #fff;
+    font: normal normal 500 1rem/1.8rem var(--font-action);
+    letter-spacing: .8px;
+}
+
+.pir-hit-desc{
+    background: #eee;
+    border-bottom: 3px solid var(--color-primary);
+}
+
+.pir-hit-desc p{
+    text-align: justify;
+    font: normal normal 500 .9rem/1.2rem var(--font-secundary);
+    color: #333;
+}
+
+/*          IDENTAÇÃO                                       */
+/*              MAX-WIDTH:650px                             */
+@media only screen and (max-width:650px){
+    .piranhas-local h1{
+        padding: 1rem 0 .5rem;
+        margin: 0;
+    }
+
+    #piranhas-historia .title-bar{
+        margin: 0;
+    }
+
+    .piranhas-local p{
+        margin: 1rem 0;
+    }
+
+    .map-wrapper iframe{
+        max-width: 20rem;
+        max-height: 15rem;
+        margin: 0;
+        border: 0;
+    }
+
+    .tur-explain{
+        margin: 0;
+    }
+
+    .caract-piranhas li p{
+        font-size: 1rem;
+        padding: 3px;
+        word-spacing: 2px;
+    }
+
+    .flag-pir-wrapper{
+        max-width: 5rem;
+        max-height: 3rem;
+        margin: 0 6rem 0 0;
+    }
+    .tur-frase p{
+        font-size: 1.5rem;
+        padding: 0;
+    }
+
+    .pir-hit-desc p{
+        font: normal normal 200 .8rem/1.2rem var(--font-secundary)
+    }
+}
+
+/*              MAX-WIDTH:550px                             */
+@media only screen and (max-width:550px){
+    .piranhas-local h1{
+        padding: 1rem 0 .5rem;
+        margin: 0;
+        font-size: 1.5rem;
+    }
+
+    .piranhas-local p{
+        font-size: 1.2rem;
+    }
+
+    .caract-piranhas li p{
+        font-size: .8rem;
+        padding: 0;
+        line-height: 1.2rem;
+    }
+
+    .tur-frase p {
+        padding: 0;
+        line-height: 1.5rem;
+    }
+}
+
+/*              MAX-WIDTH:450px                             */
+@media only screen and (max-width:450px){
+    .piranhas-local h1{
+        font-size: 1.2rem;
+        padding: .3rem 0 .1rem;
+    }
+
+    .tur-frase p{
+        margin: 1rem 0;
+        font-size: 1rem;
+    }
+}
+
+/*              MAX-WIDTH:350px                             */
+@media only screen and (max-width:350px){
+    .map-wrapper iframe{
+        max-width: 15rem;
+        max-height: 10rem;
+    }
+
+    .pir-hist-button button{
+        font-size: .8rem;
+    }
+
+    .caract-piranhas .img-wrapper{
+        max-width: .5rem;
+    }
+}
+
+/*              MAX-WIDTH:300px                             */
+@media only screen and (max-width:300px){
+    .caract-piranhas li p{
+        font-size:  .7rem;
+    }
+}

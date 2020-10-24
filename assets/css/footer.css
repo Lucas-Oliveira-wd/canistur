@@ -1,0 +1,161 @@
+/*====================================================================================================
+=====                                                                                          =======
+=====               Este site foi feito por "Lucas Oliveira"                                   =======
+=====               Telefone (Whatsapp): (82) 98878-5978                                       =======
+=====               Instagram: @lucasoliveirawd                                                =======
+=====               E-mail: lukasforever02@gmail.com                                           =======
+=====                                                                                          =======
+=====================================================================================================*/
+
+footer{
+    width: 100%;
+    display: block;
+    background-color: #1c1c1c;
+    color: #bbb;
+}
+
+.footer-section{
+    flex: 1;
+    height: 100%;
+    padding: 1rem
+}
+
+footer h4{
+    font-family: var(--font-primary);
+    color: #bbb;
+    opacity: .6;
+    font-size: 1rem;
+}
+
+.footer-section .problema-no-site{
+    margin-bottom:1.5rem;
+}
+
+.footer-section .problema-no-site input{
+    border: none;
+    border-bottom: 1px dashed #555;
+    background: rgba(0,0,0,0) url('../img/send-icon-cinza.png') no-repeat scroll right;
+    background-size: 1.2rem;
+    font: normal normal 500 1rem var(--font-action);
+    color: #666;
+    width: 15rem;
+    margin: auto;
+    padding: .2rem;
+    text-align: center;
+}
+.footer-section .footer-social-media{
+    align-items: center;
+    justify-content: space-evenly;
+}
+.footer-section .contate i{
+    font-size: 1.5rem;
+    margin: .5rem 1rem;
+    color: #aaa;
+}
+.footer-social-media i:hover{
+    color: #fff;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.footer-section .payforms{
+    align-items:center;
+    justify-content: center;
+    padding: 1rem;
+}
+.footer-section .payforms .img-wrapper{
+    width: 6rem;
+    height: 1.4rem;
+}
+
+.footer-bar{
+    height: .2rem;
+    background-color: #888;
+}
+
+.footer-autor{
+    min-height: 3rem;
+}
+.footer-autor p{
+    font-family: var(--font-secundary);
+    padding: .5rem;
+    color: #888;
+    letter-spacing: .04rem;
+    word-spacing: .06rem;
+    line-height: 2rem
+}
+.footer-autor a{
+    color: var(--color-primary);
+}
+.footer-autor a:hover{
+    text-decoration: underline;
+}
+
+.footer-section:nth-child(3) ul{
+    margin: 1rem 0;
+}
+
+.footer-section li{
+    font: normal normal 400 .8rem/1rem var(--font-secundary);
+    list-style: disc;
+}
+
+.social-media{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.social-media a{
+    color: #eee;
+}
+
+/*              IDENTAÇÃO           */
+/*      MAX-WIDTH:650px             */
+
+@media only screen and (max-width:650px){
+    .footer-section{
+        max-width: 15rem;
+    }
+}
+
+/*              MAX-WIDTH:550px                 */
+@media only screen and (max-width:550px){
+    footer p{
+        font-size: .8rem !important;
+    }
+
+    footer h4{
+        font-size: .7rem;
+    }
+
+    footer p{
+        font-size: .7rem;
+    }
+
+    footer i{
+        font-size: 1.2rem !important;
+    }
+
+    .footer-section{
+        max-width: 10rem;
+    }
+
+    footer input{
+        max-width: 8rem;
+    }
+
+    .social-media i{
+        font-size: .8rem !important;
+    }
+
+    footer ul li{
+        font-size: .6rem !important;
+    }
+}
+
+/*              MAX-WIDTH:450px                 */
+@media only screen and (max-width:450px){
+    .footer-top{
+        flex-direction: column;
+    }
+}

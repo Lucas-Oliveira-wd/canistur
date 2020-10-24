@@ -1,0 +1,53 @@
+#section-msg{
+    background: url('../img/w-cidade-noite.jpeg') no-repeat;
+    background-size: cover;
+    padding: 2rem 0;
+}
+
+#section-msg .form-default{
+    background: var(--color-primary-5);
+    width: 30rem;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    height: 30rem;
+    position: relative;
+}
+
+.title h2{
+    text-align: center;
+    color: #eee;
+    margin: 0 0 2rem;
+}
+
+.form-item{
+    margin: 1rem 0;
+}
+
+.form-item label{
+    color: #eee;
+    font-family: var(--font-secundary);
+    font-size: 1rem;
+}
+
+#section-msg input, #section-msg textarea{
+    width: 100%;
+}
+
+#section-msg textarea{
+    max-width: 100%;
+    max-height: 10rem;
+    min-width: 15rem;
+    min-height: 5rem;
+}
+
+#button-form-contato{
+    bottom: 1rem;
+    left: 10%; right: 10%;
+    color: #eee;
+    background: var(--color-primary);
+    width: 20rem;
+    position: absolute;
+    padding: 8px 0;
+    border-radius: 5px;
+}
+

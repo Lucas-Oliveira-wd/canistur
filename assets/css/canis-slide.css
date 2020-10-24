@@ -1,0 +1,537 @@
+/*====================================================================================================
+=====                                                                                          =======
+=====               Este site foi feito por "Lucas Oliveira"                                   =======
+=====               Telefone (Whatsapp): (82) 98878-5978                                       =======
+=====               Instagram: @lucasoliveirawd                                                =======
+=====               E-mail: lukasforever02@gmail.com                                           =======
+=====                                                                                          =======
+=====================================================================================================*/
+
+#slide{
+    width: 100%;
+    height: 94vh;
+    background: transparent;
+    margin-bottom: 4rem;
+}
+
+#slide .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+    margin:0 auto;
+    width: 45rem;
+    overflow: hidden;
+}
+
+.slide-wrapper{
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s ease-out;
+    display: none;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.show-sl1 .slide-wrapper:first-child, .show-sl2 .slide-wrapper:nth-child(2),
+.show-sl3 .slide-wrapper:nth-child(3), .show-sl4 .slide-wrapper:nth-child(4),
+.show-sl5 .slide-wrapper:nth-child(5), .show-sl6 .slide-wrapper:nth-child(6),
+.show-sl7 .slide-wrapper:nth-child(7), .show-sl8 .slide-wrapper:nth-child(8){
+    z-index: 2;
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+}
+
+/*          configurações especias para o slide 5*/
+.show-sl5 #slide .img-wrapper img{
+    opacity: 1;
+}
+
+/*      configuraçoes especiais para o slide 6*/
+.show-sl6 #slide .img-wrapper{
+    background: rgba(0,0,0,1);
+}
+
+.show-sl6 #slide .img-wrapper img{
+    opacity: .75;
+}
+
+.show-sl6 #slide .slide-headline{
+    padding: 6rem 1rem;
+}
+
+.show-sl6 #slide .slide-headline h1{
+    font: normal normal 300 1.9rem/3rem var(--font-primary);
+    letter-spacing: 1px;
+}
+
+.show-sl6 #slide .slide-headline h1:nth-child(2){
+    animation: comeFromBottom 1s 2s backwards;
+}
+
+/*      configurações especiais para o slide 7*/
+.show-sl7 #slide .img-wrapper{
+    background: rgba(0,0,0,.9);
+}
+
+.show-sl7 #slide .img-wrapper img{
+    opacity: .6;
+}
+
+/*      configurações especiais para o slide-8      */
+
+.show-sl8 #slide .slide-headline{
+    padding: 5rem 0;
+}
+.show-sl8 #slide .slide-headline p{
+    margin: .5rem 0;
+}
+
+.show-sl8 #slide .slide-headline p{
+    animation: comeFromBottom 1s backwards;
+}
+
+.show-sl8 #slide .slide-headline p:nth-child(2){
+    animation: comeFromBottom 1s .5s backwards;
+}
+
+.show-sl8 #slide .slide-headline p:nth-child(3){
+    animation: comeFromBottom 1s 1s backwards;
+}
+
+.show-sl8 #slide .slide-headline button{
+    animation: comeFromBottom 1s 1.5s backwards;
+}
+
+    /* Back to top button */
+
+.back-to-top {
+    background: var(--color-primary);
+    color: #fff;
+    position: fixed;
+    display: none;
+    padding: 6px 12px 9px 12px;
+    font-size: 16px;
+    border-radius: 2px;
+    right: 15px;
+    bottom: 15px;
+    transition: background 0.5s;
+    z-index:3;
+  }
+
+  .slide-wrapper .img-wrapper{
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      background: rgba(0,0,0,.9);
+  }
+
+  /*        imagem do slide     */
+  .slide-wrapper img{
+      opacity: .7;
+      animation: zoom 20s linear infinite alternate;
+  }
+
+/*      head line do slide      */
+.slide-headline{
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: unset;
+    position: absolute;
+    right: 0; left: 0; top: 0; bottom: 0;
+    padding: 3rem 1rem;
+}
+
+.slide-headline h1{
+    font:normal normal 200 2.5rem/3rem var(--font-primary);
+    text-transform: uppercase;
+    color: #eee;
+    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.6);
+    letter-spacing: .4rem;
+    animation: comeFromBottom 1s;
+    width: 100%;
+    text-align: center;
+    margin: 0 0 1rem 0;
+}
+
+.healinebar{
+    width: 100%;
+    height: 0.05rem;
+    background-color: #eee;
+    box-shadow: .1rem .1rem rgba(50, 50, 50, 0.7);
+    animation: comeFromBottom 1s .3s backwards;
+}
+
+.slide-headline p{
+    font: normal normal 400 1.6rem/ 2.5rem var(--font-secundary);
+    color: #ddd;
+    text-shadow: .1rem .1rem rgba(20, 20, 20, .4);
+    letter-spacing: .09rem;
+    margin: 3rem 0 0 0;
+    animation: comeFromBottom 1s .5s backwards;
+    text-indent: 0;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+}
+
+.slide-headline button{
+    position: absolute;
+    bottom: 8rem;
+    align-self: center;
+    font-size: 1rem;
+    border: #fff 1px solid;
+    padding: .3rem .6rem;
+    background: transparent;
+    color: #fff;
+    animation: comeFromBottom 1s .7s backwards;
+    border-radius: 2px;
+}
+
+.slide-headline button:hover{
+    background-color: rgba(217, 178, 13, 0.5);
+    border: transparent 1px solid;
+}
+
+/*      botao de trocar slide       */
+.trocar-slider-bar{
+    width: 2rem;
+    height: .1rem;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.trocar-slide:hover .trocar-slider-bar{
+    height: .2rem;
+}
+
+.trocar-slide{
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    top: 50%;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(5, 74, 131, 0);
+    cursor: pointer;
+    z-index: 5;
+    transition: all .5s;
+    display: flex;
+}
+
+/*      fazer o botao de trocar slide aparecer      */
+
+#trocar-slide-dir{
+    right: 1rem;
+}
+
+#trocar-slide-dir #trocar-slide-r-1{
+    transform: rotate(45deg) translate(-.2rem,-.6rem)
+}
+#trocar-slide-dir #trocar-slide-r-2{
+    transform: rotate(-45deg) translate(-.2rem,.6rem)
+}
+
+#trocar-slide-esq{
+    left: 1rem;
+}
+
+#trocar-slide-esq #trocar-slide-l-1{
+    transform: rotate(-45deg) translate(.2rem,-.6rem)
+}
+#trocar-slide-esq #trocar-slide-l-2{
+    transform: rotate(45deg) translate(.2rem,.6rem)
+}
+
+/*      identificando em qual slide estar       */
+.slide-identfy{
+    position: absolute;
+    display: flex;
+    bottom: 2.5rem;
+    z-index: 2;
+}
+
+.slide-sdentify-content{
+    height: 1rem;
+    width: 1rem;
+    border-radius: 1rem;
+    border: 1px solid #fff;
+    margin: 0 8px;
+    transition: all .5s;
+}
+
+    /*      slider ativo fica branco        */
+.show-sl1 .slide-sdentify-content:first-child, .show-sl2 .slide-sdentify-content:nth-child(2),
+.show-sl3 .slide-sdentify-content:nth-child(3), .show-sl4 .slide-sdentify-content:nth-child(4),
+.show-sl5 .slide-sdentify-content:nth-child(5), .show-sl6 .slide-sdentify-content:nth-child(6),
+.show-sl7 .slide-sdentify-content:nth-child(7), .show-sl8 .slide-sdentify-content:nth-child(8){
+    background: #fff;
+}
+
+/*              IDENTAÇÃO                   */
+/*              MAX-WIDTH: 950px            */
+@media only screen and (max-width:950px){
+}
+
+/*              MAX-WIDTH: 900px            */
+@media only screen and (max-width:900px){
+
+.slide-headline h1{
+    font:normal normal 200 2rem/3rem var(--font-primary);
+    text-shadow: .2rem .2rem 1px rgba(50, 50, 50, 0.7);
+    letter-spacing: .1rem;
+}
+
+.slide-headline p{
+    font-size:1rem;
+    text-shadow: 0 1px 2px rgba(0,0,0,.7)
+}
+
+}
+
+/*              MAX-WIDTH: 650px            */
+@media only screen and (max-width:650px){
+    #slide .container{
+        max-width: unset;
+        width: auto;
+    }
+
+    .slide-headline{
+        padding: .3rem .5rem 0;
+    }
+
+    .slide-headline h1{
+        font-size: 1.3rem;
+        text-shadow: 1px 1px 2px rgba(0,0,0,.7);
+
+    }
+
+#trocar-slide-esq{
+    left: 0;
+}
+
+#trocar-slide-dir{
+    right: 0;
+}
+
+}
+
+/*              MAX-WIDTH: 550px            */
+@media only screen and (max-width:550px){
+    #slide{
+        height: 25rem;
+    }
+    .slide-identfy{
+        bottom: 5px;
+    }
+
+    .slide-headline button{
+        bottom: 4rem;
+    }
+
+    .show-sl6 .slide-headline h1{
+        font-size: 1.5rem;
+    }
+
+    .show-sl6 .slide-headline{
+        padding: 4rem 2rem ;
+    }
+}
+
+/*              MAX-WIDTH: 500px            */
+@media only screen and (max-width:500px){
+    #slide{
+        height: 20rem;
+    }
+
+    .slide-headline p{
+        margin: 15px 0 0 0;
+        line-height: 1.5rem;
+        word-spacing: -2px;
+
+    }
+
+    .show-sl6 .slide-headline{
+        padding: 10px;
+    }
+    
+    .show-sl6 .slide-headline h1{
+        font-size: 1.2rem;
+    }
+
+    /*      configurações especiais para o slide-8      */
+    
+    .show-sl8 .slide-headline{
+        padding: 2rem 0;
+    }
+}
+
+/*              MAX-WIDTH: 400px            */
+@media only screen and (max-width:400px){
+    #slide{
+        height: 15rem;
+    }
+
+    .show-sl6 .slide-headline{
+        padding: 0;
+    }
+    .slide-headline h1{
+        font-size: .8rem;
+        margin: 0;
+    }
+    
+    .show-sl6 .slide-headline h1{
+        font-size: 1rem;
+    }
+
+    .slide-headline button{
+        font-size: .8rem;
+        bottom: 2rem;
+    }
+
+    #trocar-slide-esq, #trocar-slide-dir{
+        bottom: 1.5rem;
+        top: auto;
+    }
+
+    .show-sl6 .slide-headline h1{
+        line-height: 3rem;
+    }
+
+    .show-sl6 .slide-headline h1:nth-child(1){
+        margin: 1rem 0 0 0;
+
+    }
+
+    .show-sl8 .slide-headline{
+        padding: 1rem 0;
+    }
+
+    .show-sl8 .slide-headline p{
+        line-height: .6rem;
+        padding: 0;
+    }
+}
+
+/*              MAX-WIDTH: 350px            */
+@media only screen and (max-width:350px){
+    .slide-headline p{
+        margin: .5rem 0 0 0;
+    }
+
+    .slide-headline h1{
+        line-height: 1.5rem;
+        margin: 0 0 .5rem 0;
+    }
+
+    .slide-headline p{
+        line-height: 1.5rem;
+    }
+
+    .show-sl6 .slide-headline h1{
+        letter-spacing: 1px;
+    }
+
+    .slide-sdentify-content{
+        max-width: 7px;
+    }
+
+    /*      slider ativo fica na horizontal       */
+.show-sl1 .slide-sdentify-content:first-child, .show-sl2 .slide-sdentify-content:nth-child(2),
+.show-sl3 .slide-sdentify-content:nth-child(3), .show-sl4 .slide-sdentify-content:nth-child(4),
+.show-sl5 .slide-sdentify-content:nth-child(5), .show-sl6 .slide-sdentify-content:nth-child(6),
+.show-sl7 .slide-sdentify-content:nth-child(7), .show-sl8 .slide-sdentify-content:nth-child(8){
+    max-width: 1rem;
+}   
+}
+
+/*                  MAX-WIDTH:300px         */
+@media only screen and (max-width:300px){
+    
+.show-sl6 .slide-headline h1{
+    line-height: 2rem;
+}
+
+.show-sl8 .slide-headline p:first-child{
+    line-height: 1.5rem;
+}
+}
+
+/*              MAX-HEIGHT:500px                */
+@media only screen and (max-height:500px) {
+    .slide-identfy{
+        bottom: 8px;
+    }
+
+    .slide-headline{
+        padding: .5rem;
+    }
+
+    .slide-headline p{
+        margin: 1rem 0 0 0;
+    }
+
+    .slide-headline button{
+        bottom: 4rem;
+    }
+
+    .slide-headline h1{
+        line-height: 1rem;
+        margin: 0 0 .5rem 0;
+    }
+}
+
+/*              MAX-HEIGHT:400px                */
+@media only screen and (max-height:400px){
+    #slide{
+        height: 20rem;
+    }
+}
+
+/*              MAX-HEIGHT:350px                */
+@media only screen and (max-height:350px){
+    #trocar-slide-dir{
+        bottom: 3rem;
+        top: auto;
+    }
+
+    #trocar-slide-esq{
+        bottom: 3rem;
+        top: auto;
+    }
+
+    .slide-headline button{
+        bottom: 3rem;
+    }
+
+    .slide-sdentify-content{
+        height: 7px;
+        max-width: 7px;
+    }
+            /*      slider ativo fica na horizontal       */
+.show-sl1 .slide-sdentify-content:first-child, .show-sl2 .slide-sdentify-content:nth-child(2),
+.show-sl3 .slide-sdentify-content:nth-child(3), .show-sl4 .slide-sdentify-content:nth-child(4),
+.show-sl5 .slide-sdentify-content:nth-child(5), .show-sl6 .slide-sdentify-content:nth-child(6),
+.show-sl7 .slide-sdentify-content:nth-child(7), .show-sl8 .slide-sdentify-content:nth-child(8){
+    max-width: 1rem;
+} 
+}
+
+/*              MAX-HEIGHT:300px                */
+@media only screen and (max-height:300px){
+    #slide{
+        height: 16rem;
+    }
+
+    .show-sl6 .slide-headline{
+        padding: 0;
+    }
+}

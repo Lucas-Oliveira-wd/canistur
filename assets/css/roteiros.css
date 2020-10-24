@@ -1,0 +1,283 @@
+/*====================================================================================================
+=====                                                                                          =======
+=====               Este site foi feito por "Lucas Oliveira"                                   =======
+=====               Telefone (Whatsapp): (82) 98878-5978                                       =======
+=====               Instagram: @lucasoliveirawd                                                =======
+=====               E-mail: lukasforever02@gmail.com                                           =======
+=====                                                                                          =======
+=====================================================================================================*/
+
+.pacotes-titulo{
+    display: block;
+    width: 100%;
+    padding: 4rem 0 0 0;
+}
+
+.pacotes-titulo h2{
+    font: normal normal 500 2.5rem/3.5rem var(--font-primary);
+    color: #444;
+}
+.roteiros-corpo{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.roteiros-item{
+    margin: 1rem 1rem 3rem;
+    border-radius: 3px;
+    max-width: 29rem;
+}
+
+/*          ESPAÇAMENTO INFERIOR NO ÚLTIMO ROTEIRO          */
+.roteiros-item:last-child{
+    margin-bottom: 10rem;
+}
+
+.roteiros-item .img-wrapper{
+    position: relative;
+    height:16rem;
+    overflow: hidden;
+    width: 100%;
+    background: linear-gradient(to top, #000,#000);
+    transition: all 1s;
+}
+
+.roteiros-item .img-wrapper::after{
+    content:'';
+    position: absolute;
+    bottom: 0; right: 0; left: 0; top: 0;
+    background: linear-gradient(to top, var(--color-primary-7), transparent);
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s;
+}
+
+.roteiros-item .img-wrapper:hover::after{
+    visibility: visible;
+    opacity: 1;
+}
+
+.roteiros-item .img-wrapper img{
+    object-fit: cover;
+    transition: all 1s;
+}
+
+
+
+.dupler{
+    display: flex;
+    height: 8rem !important;
+}
+
+.dupler img{
+    max-width: 15rem !important;
+}
+
+.roteiros-item p{
+    text-align: justify;
+    font-size: 12px;
+    padding: .3rem 0;
+}
+
+/*          TÍTULOS DOS ROTEIROS        */
+.roteiros-item h3{
+   color: var(--color-primary);
+   border-bottom: 3px solid var(--color-primary);
+   padding: 0 0 3px 0;
+   font: 600 .8rem/1.5rem var(--font-primary);
+}
+
+.roteiros-item button{
+    width: 20rem;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 2rem;
+    background: var(--color-primary);
+    font: normal normal 300 .8rem/2rem var(--font-action);
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    -webkit-transition: all ease .5s;
+    -moz-transition: all ease .5s;
+    transition: all ease .5s;
+    border: 2px solid transparent;
+    margin-top: 1rem;
+    color: #eee;
+}
+
+.roteiros-item button:hover{
+    background: #fff;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    font-weight: 600;
+}
+
+.roteiros-item h5{
+    color: var(--color-secundary-darker);
+    font: normal normal 500 .7rem/1.5rem var(--font-primary)
+}
+
+/*                  IDENTAÇÃO                                */
+/*              MAX-WIDTH:1050px                             */
+@media only screen and (max-width:1050px){
+    .roteiro-desc p{
+        font-size: 1rem;
+    }
+
+    .roteiros-item button{
+        max-width: 15rem;
+    }
+
+    .dupler{
+            max-width: 55rem !important;
+    }
+}
+
+/*              MAX-WIDTH:950px                             */
+@media only screen and (max-width:950px){
+    .dupler{
+       max-width: 53.5rem !important;
+    }  
+}
+
+/*              MAX-WIDTH:900px                             */
+@media only screen and (max-width:900px){
+    .dupler{
+        max-width: 47rem !important;
+        max-height: 18rem;
+    }
+
+    .roteiros-item p{
+        text-align: left;
+    }
+}
+
+/*              MAX-WIDTH:800px                             */
+@media only screen and (max-width:800px){
+    .dupler{
+        max-width: 41rem !important;
+        max-height: 14rem;
+    }
+
+    .roteiros-item .img-wrapper{
+        max-width: 20rem;
+        max-height: 15rem;
+    }
+
+    .roteiros-item button{
+        font-size: 1rem;
+    }
+}
+
+/*              MAX-WIDTH:700px                             */
+@media only screen and (max-width:700px){
+    .dupler{
+        max-width: 39rem !important;
+    }
+}
+
+/*              MAX-WIDTH:650px                             */
+@media only screen and (max-width:650px){
+    .dupler{
+        max-width: 32rem !important;
+    }
+
+    .roteiros-item .img-wrapper{
+        max-width: 15rem;
+        max-height: 9rem;
+    }
+
+    .roteiros-item button{
+        padding: 5px 2px;
+        font-size: .7rem;
+    }
+}
+
+/*              MAX-WIDTH:550px                             */
+@media only screen and (max-width:550px){
+    .dupler{
+        max-width: 26rem !important;
+        max-height: 8rem !important;
+    }
+
+    .roteiros-item h3, .roteiros-item h5{
+        font-size: .8rem;
+    }
+
+    .roteiros-item{
+        padding: 4px;
+    }
+
+    .roteiros-item .img-wrapper{
+        max-width: 10rem;
+        max-height: 6rem;
+    }
+
+    .roteiros-item p{
+        font-size: .8rem;
+        line-height: 1rem;
+    }
+}
+
+/*              MAX-WIDTH:450px                             */
+@media only screen and (max-width:450px){
+    .dupler{
+        max-width: 23rem !important;
+    }
+
+    .roteiros-item button{
+        max-width: 10rem;
+    }
+}
+
+/*              MAX-WIDTH:400px                             */
+@media only screen and (max-width:400px){
+    .dupler{
+        max-width: 20rem !important;
+        max-height: 7rem;
+    }
+}
+
+/*              MAX-WIDTH:350px                             */
+@media only screen and (max-width:350px){
+    .dupler{
+        max-width: 17rem !important;
+        max-height: 5rem !important;
+    }
+
+    .roteiros-item:nth-child(1), .roteiros-item:nth-child(2),
+    .roteiros-item:nth-child(3), .roteiros-item:nth-child(4){
+        flex-direction: column;
+    }
+
+    .roteiros-item:nth-child(1) .img-wrapper, .roteiros-item:nth-child(2) .img-wrapper,
+    .roteiros-item:nth-child(3) .img-wrapper, .roteiros-item:nth-child(4) .img-wrapper{
+        max-width: 17.95rem;
+    }
+
+}
+
+/*              MAX-WIDTH:300px                             */
+@media only screen and (max-width:300px){
+    .dupler{
+        max-width: 14rem !important;
+    }
+
+    .roteiros-item:nth-child(1) .img-wrapper, .roteiros-item:nth-child(2) .img-wrapper,
+    .roteiros-item:nth-child(3) .img-wrapper, .roteiros-item:nth-child(4) .img-wrapper{
+        max-width: 14.8rem;
+    }
+}
+
+/*              MAX-WIDTH:250px                             */
+@media only screen and (max-width:250px){
+    .dupler{
+        max-width: 13rem !important;
+        max-height: 4rem !important;
+    }
+
+    .roteiros-item:nth-child(1) .img-wrapper, .roteiros-item:nth-child(2) .img-wrapper,
+    .roteiros-item:nth-child(3) .img-wrapper, .roteiros-item:nth-child(4) .img-wrapper{
+        max-width: 13.9rem;
+    }
+}
