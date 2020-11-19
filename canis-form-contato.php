@@ -31,102 +31,131 @@
     <link rel="stylesheet" type="text/css" href="assets/css/canis-top.css"/>
     <link rel="stylesheet" type="text/css" href="assets/css/canis-slide.css"/>
     <link rel="stylesheet" type="text/css" href="assets/css/canis-piranhas.css"/>
-    <link rel="stylesheet" type="text/css" href="assets/css/canis-contact.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/canis-msg-enviada.css"/>
     <title>Canistur Turismo</title>
 </head>
-<body>
+<body class="show-sl6">
+
 <!--=======================================================================================
                                 destaques
 ============================================================================================-->
 <section id="section-destaques">
-    <div class="destaque">
-        <div class="img-wrapper">
-            <img src="assets/img/angicos.jpg" alt="">
+        <div class="destaque">
+            <div class="img-wrapper">
+                <img src="assets/img/angicos.jpg" alt="">
+            </div>
+            <h3>Promoção</h3>
+            <h2>Rota do Cangaço</h2>
         </div>
-        <h3>Promoção</h3>
-        <h2>Rota do Cangaço</h2>
-    </div>
 
-    <div class="destaque">
-        <div class="img-wrapper">
-            <img src="assets/img/logo2.png" alt="">
+        <div class="destaque">
+            <div class="img-wrapper">
+                <img src="assets/img/logo2.png" alt="">
+            </div>
         </div>
-    </div>
 
-    <div class="destaque">
-        <div class="img-wrapper">
-            <img src="assets/img/canyons.jpeg" alt="">
+        <div class="destaque">
+            <div class="img-wrapper">
+                <img src="assets/img/canyons.jpeg" alt="">
+            </div>
+            <h2>Passeio aos Canyons</h2>
+            <h3>Promoção</h3>
         </div>
-        <h2>Passeio aos Canyons</h2>
-        <h3>Promoção</h3>
-    </div>
 </section>
 
 <!--                                       Header                                       -->    
 
-<header class="header-bottom">
-            
-            <div class="container">
-                <nav>
-                    <ul class="menu-principal">
-                        <li class="menu-principal-item">
-                            <a href="index.html">Página principal</a>
-                        </li>
-                        <li class="menu-principal-item"><a href="servicos.html">Serviços</a></li>
-                        <li class="menu-principal-item"><a href="">Promoções</a></li>
-                        <li class="menu-principal-item">
-                            <a class="active" href="canis-contato.html">Contato com cliente</a>
-                        </li>
-                    </ul>
-                </nav>    
-            </div>
-    </header>    
-
-<!--        begins of the form-section              -->
-<section id="section-msg">
-    <div class="container">
-        <form method="post" class="form-default" action="canis-form-contato.php">
-            <div class="title">
-                <h2>Contate-nos</h2>
-            </div>
-
-            <div class="form-item">
-                <label for="name">Nome Completo</label>
-                <div class="input-camp">
-                    <input id="name" type="text" name="name">
+    <header class="header-bottom">
+                
+                <div class="container">
+                    <nav>
+                        <ul class="menu-principal">
+                            <li class="menu-principal-item">
+                                <a class="active" href="index.html">Página principal</a>
+                            </li>
+                            <li class="menu-principal-item"><a href="servicos.html">Serviços</a></li>
+                            <li class="menu-principal-item"><a href="">Promoções</a></li>
+                            <li class="menu-principal-item">
+                                <a href="canis-contato.html">Contato com cliente</a>
+                            </li>
+                        </ul>
+                    </nav>    
                 </div>
-            </div>
+        </header>   
 
-            <div class="form-item">
-                <label for="fone">Telefone</label>
-                <div class="input-camp">
-                    <input placeholder="Ex: (DDD) 99999-9999" id="fone" type="text" name="phone">
-                </div>
-            </div>
+<?php
 
-            <div class="form-item">
-                <label for="email">E-mail</label>
-                <div class="input-camp">
-                    <input id="email" type="email" name="email">
-                </div>
-            </div>
+$name = $phone = $email = $msg = '';
+    
+if(isset($_POST['email']) && !empty($_POST['email'])){
 
-            <div class="form-item">
-                <label for="mensag">Mensagem</label>
-                <div class="input-camp">
-                    <textarea name="msg" id="mensag"></textarea>
-                </div>
-            </div>
+    $name = addslashes($_POST["name"]);
+    $phone = addslashes($_POST["phone"]);
+    $email = addslashes($_POST["email"]);
+    $msg = addslashes($_POST["msg"]);
 
-            <button type="submit" id="button-form-contato">Enviar</button>
+    $to = 'canisturturismo@gmail.com';
+    $subject = 'Contato do Site';
+    $body = 'Nome: '.$name. "\r\n".
+            "Email: ".$email. "\r\n".
+            "Telefone: ".$phone. "\r\n".
+            "Mensagem: ".$msg;
+    $header = "From:lukasforever02@gmail.com"."\r\n".
+                "Reply-To:".$email."\r\n".
+                "X=Msilrt:PHP/".phpversion();
 
-        </form>
-    </div>
-</section>
-<!--        end of the form-section              -->
+    if(mail($to, $subject, $body, $header)){
+        echo('<section id="section-msg-enviada">
+        <div class="container">
+            <p class="msg-eviada"> Mensagem enviada!</p>
+            <p class="canis-agradece">A Canistur agradece o seu contato!
+                Sua mensagem será respondida o mais breve possível</p>
+        </div>        
+    </section>');
+    } else {
+        echo('Ocorreu um erro durante o envio!');
+    }
+}
+    //define variables and set to empty values
+    $nameErr = $phoneErr = $emailErr = '';
+    $name = $phone = $email = $assunto = $msg = '';
 
-<!--                        Footer                                      -->
-    <footer>
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (empty($_POST['name'])){
+            $nameErr = 'Digite um nome';
+        } else {
+        }
+
+        if (empty($_POST['phone'])){
+            $emailErr = 'Digite um número de telefone';
+        } else {
+            $phone = test_input($_POST["phone"]);
+        }
+
+        if (empty($_POST['email'])){
+            $email = '';
+        } else {
+            $email = test_input($_POST["email"]);
+        }
+
+        if (empty($_POST['msg'])){
+            $msgErr = 'Digite uma mensagem';
+        } else {
+            $msg = test_input($_POST["msg"]);
+        }
+    }
+
+    function test_input($data){
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+?>
+
+ <!--                        Footer                                      -->
+
+ <footer>
         <div class="container">
             <div class="footer-top flex"> 
                 <div class="footer-section">
@@ -137,9 +166,15 @@
                     <div class="contate">
                         <h4>Ou contate o desenvolvedor, em uma das redes sociais abaixo</h4>
                         <div class="footer-social-media flex">
-                            <i class="fab fa-whatsapp"></i>
-                            <i class="fab fa-instagram"></i>
-                            <i class="fas fa-envelope"></i>
+                            <a target="_blank" href="https://api.whatsapp.com/send?phone=5582988785978">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a target="_blank" href="https://www.instagram.com/lucasoliveirawebdesigner/?hl=pt-br">
+                                <i class="fab fa-instagram"></i>
+                            </a>    
+                            <a target="_blank" href="mailto:lukasforever02@gmail.com">
+                                <i class="fas fa-envelope"></i>
+                            </a> 
                         </div>
                     </div>
                 </div>
@@ -178,9 +213,9 @@
             </div>
             <div class="footer-bar"></div>
             <div class="footer-autor">
-                <p>Site criado por <a target='_blank' href="http://lucasoliveirawd.com/">Lucas Oliveira</a></p>
+                <p>Site criado por <a target="_blank" href="http://lucasoliveirawd.com/">Lucas Oliveira</a></p>
                 <div>
-                    <a target='_blank' href="https://api.whatsapp.com/send?phone=5582988785978&text=Opa!%20meu%20nome%20%C3%A9%20Lucas%20Oliveira%20e%20sou%20Web%20Develonper%20e%20Front-end%20Design.%20Diga-me%20o%20que%20deseja!"><i class="fab fa-whatsapp"></i></a>
+                    <a target="_blank" href="https://api.whatsapp.com/send?phone=5582988785978&text=Opa!%20meu%20nome%20%C3%A9%20Lucas%20Oliveira%20e%20sou%20Web%20Develonper%20e%20Front-end%20Design.%20Diga-me%20o%20que%20deseja!"><i class="fab fa-whatsapp"></i></a>
                     <a target="_blank" href='https://www.instagram.com/lucasoliveirawebdesigner/?hl=pt-br'><i class="fab fa-instagram"></i></a>
                     <a><i class="fas fa-envelope"></i></a>
                 </div>
