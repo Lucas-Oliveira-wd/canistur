@@ -1,0 +1,10 @@
+#sec-promocoes{
+    height: 100vh;
+}
+
+#sec-promocoes p{
+    padding: 10rem 0;
+    text-align: center;
+    font-size: 3rem;
+    color: var(--color-primary);
+}

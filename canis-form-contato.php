@@ -71,11 +71,11 @@
                     <nav>
                         <ul class="menu-principal">
                             <li class="menu-principal-item">
-                                <a class="active" href="index.html">Página principal</a>
+                                <a href="index.html">Página principal</a>
                             </li>
                             <li class="menu-principal-item"><a href="servicos.html">Serviços</a></li>
                             <li class="menu-principal-item"><a href="">Promoções</a></li>
-                            <li class="menu-principal-item">
+                            <li class="active" class="menu-principal-item">
                                 <a href="canis-contato.html">Contato com cliente</a>
                             </li>
                         </ul>
